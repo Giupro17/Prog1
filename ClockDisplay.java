@@ -12,6 +12,19 @@
  * @author Michael Kölling and David J. Barnes
  * @version 2016.02.29
  */
+/*/
+ * Extra questions
+ * 
+ * 30) Rectangle window = new Rectangle(5,7)
+ * 
+ * 33) p1.print("file1.txt", true);
+ *     p1.print("file2.txt", false);
+ *     
+ *     int status = 0;
+ *     status = p1.getStatus(3);
+ *     status = p1.getStatus(30);
+   
+*/
 public class ClockDisplay
 {
     private NumberDisplay hours;
@@ -27,6 +40,11 @@ public class ClockDisplay
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
         updateDisplay();
+        
+        /*
+         * Rectangle windows;
+         */
+        
     }
 
     /**
@@ -36,7 +54,7 @@ public class ClockDisplay
      */
     public ClockDisplay(int hour, int minute)
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
         setTime(hour, minute);
     }
@@ -50,6 +68,9 @@ public class ClockDisplay
         minutes.increment();
         if(minutes.getValue() == 0) {  // it just rolled over!
             hours.increment();
+        }
+        if(hours.getValue()==0){
+            hours.setValue(12);
         }
         updateDisplay();
     }
@@ -82,3 +103,31 @@ public class ClockDisplay
                         minutes.getDisplayValue();
     }
 }
+//
+/* Part II
+ * 27) Because the time has not been set
+ * 29) 60 times
+ * 30) Rectangle window = new Rectangle(5,7)
+ * 31) a europan-style clock that shows hours and minutes between 0:00 and 23:59
+ * by receiving ticks that incrament the display
+ * 32) The second constructor creates a new clock set at the time specified by the 
+     * parameters.
+ * 33) p1.print("file1.txt", true);
+ *     p1.print("file2.txt", false);
+ *     
+ *     int status = 0;
+ *     status = p1.getStatus(3);
+ *     status = p1.getStatus(30); 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
